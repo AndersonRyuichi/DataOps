@@ -1,0 +1,9 @@
+Pontos fáceis:
+As etapas iniciais: 1.1, 1.2, 1.3, foram executadas sem nenhuma dificuldade.
+
+Pontos medianos:
+A etapa: 1.4, onde foi apresentado um grau maior de complexidade, mais em relação a assertividade da sintaxe específica da agregação do MongoDB. Embora os conceitos tanto de lookup e agregação já fossem conhecidos, demandou um tempo adicional maior do que esperava. O ponto crítico foi a parte do "$arrayElemAt" para que eu pudesse acessar corretamente os dados retornados pelo $lookup.
+Uma vez que a etapa 1.4 foi vencida, a etapa 1.5, já não foi mais um problema, a partir da 1.4 funcionando corretamente, foi somente mudar o parâmetro para conseguir com mais facilidade concluir também a próxima etapa.
+
+Pontos Difíceis:
+Com certeza, onde tive maior dificuldade foi para identificar para o meu caso de uso a sintaxe da agregação do MongoDB, já que minha experiência com MongoDB não é comparável com o Python, no Python possuo bastante experiência em diversos projetos, MongoDB ainda não possuo muitos para se tornar comparável aao Python, mas apesar das dificuldades. O teste foi concluído com êxito.
