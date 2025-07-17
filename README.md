@@ -1,6 +1,6 @@
 # 📦 Avaliação DataOps
 
-Este repositório contém a solução completa da avaliação técnica para a área de **DataOps**, desenvolvida utilizando **Python**, **pandas** e **MongoDB**, com foco em persistência de dados, consulta, agregação e agrupamento.
+Este repositório contém a solução completa do teste técnico de **DataOps**, solicitado no processo seletivo. A proposta consiste no uso de **Python**, **pandas** e **MongoDB**, com foco em manipulação, persistência, agregação e agrupamento de dados.
 
 ---
 
@@ -8,32 +8,37 @@ Este repositório contém a solução completa da avaliação técnica para a á
 
 | Arquivo | Descrição |
 | ------- | --------- |
-| **`dataops.py`** | Script Python principal que cria e popula as collections `Carros` e `Montadoras` no MongoDB, realiza as agregações e imprime os resultados no terminal. |
-| **`DataOps.ipynb`** | Notebook interativo com todo o desenvolvimento, explicações e execução dos passos da avaliação. |
-| **`Agregação_e_Agrupamento.js`** | Arquivo com os resultados extraídos das consultas de agregação e agrupamento, servindo como evidência de execução correta. |
-| **`local.Carros.json`** | Exportação da collection `Carros` em formato JSON. |
-| **`local.Montadoras.json`** | Exportação da collection `Montadoras` em formato JSON. |
-| **`Finalização.txt`** | Documento com análise pessoal de desempenho, destacando pontos fáceis, medianos e difíceis encontrados durante a atividade. |
-| **`AVALIACAO_DATAOPS.docx`** | Documento original da avaliação contendo a descrição do desafio, instruções e a autoavaliação respondida no ínicio e no final. |
-
-
----
-
-## 📝 Detalhes da solução
-
-### 📊 **Fluxo implementado**
-- Criação de `DataFrame` com dados de carros e montadoras.
-- Conexão e persistência dos dados no MongoDB local.
-- Execução de agregações MongoDB:
-  - **Agregação simples:** lookup + projeção para incluir `País` no resultado.
-  - **Agregação completa:** agrupamento por `País` consolidando veículos em array `Carros`.
+| **`README.md`** | Documento de apresentação com explicação sobre a estrutura e instruções de execução. |
+| **`AVALIACAO_DATAOPS.docx`** | Documento original do teste, preenchido com as respostas solicitadas, autoavaliação e conclusões. |
+| **`dataops.py`** | Script Python principal. Cria os DataFrames, insere os dados no MongoDB, executa a agregação (lookup e projeção) e agrupamento por País, com saída detalhada no terminal. Código estruturado para execução standalone. |
+| **`DataOps.ipynb`** | Notebook interativo contendo o desenvolvimento passo a passo, útil para acompanhamento detalhado e reprodutibilidade visual. |
+| **`Agregação_e_Agrupamento.js`** | Arquivo com os resultados da agregação e do agrupamento, representando evidência de execução correta. |
+| **`local.Carros.json`** | Exportação da collection `Carros` em formato JSON, pronta para reimportação via `mongoimport`. |
+| **`local.Montadoras.json`** | Exportação da collection `Montadoras` em formato JSON, pronta para reimportação via `mongoimport`. |
+| **`Finalização.txt`** | Reflexão pessoal sobre a execução da atividade, destacando pontos fáceis, medianos e as dificuldades enfrentadas. |
 
 ---
 
-## ⚙️ Como executar
+## 📝 Descrição geral da solução
 
-### 1️⃣ Pré-requisitos:
-- MongoDB em execução local na porta `27017`.
-- Python 3.x com bibliotecas:
+- Criação de dois `DataFrames` utilizando pandas:
+  - `Carros`: contendo dados de carros, cores e montadoras.
+  - `Montadoras`: contendo dados de montadoras e respectivos países.
+  
+- Persistência dos dados no MongoDB local (`Carros` e `Montadoras` collections).
+
+- Execução de agregações no MongoDB:
+  - **Agregação simples:** junção entre collections `Carros` e `Montadoras` utilizando `$lookup` e `$project`.
+  - **Agregação com agrupamento:** agrupamento por `País` consolidando os carros de cada montadora no campo `Carros`.
+
+- Exportação das collections para JSON, conforme solicitado.
+
+---
+
+## ⚙️ Como executar o projeto
+
+### 1️⃣ Pré-requisitos
+- MongoDB rodando localmente (`localhost:27017`).
+- Python 3.x com as bibliotecas necessárias:
   ```bash
   pip install pymongo pandas
